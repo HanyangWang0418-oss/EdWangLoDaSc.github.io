@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edwanglodasc.github.io/sitemap.xml
+Sitemap: https://hanyangwang0418-oss.github.io/EdWangLoDaSc.github.io/sitemap.xml

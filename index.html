@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hanyang Wang 王汉扬</title>
-    <meta name="description" content="Hanyang Wang researches data-efficient post-training, agentic reinforcement learning, and learning systems for large language models." />
+    <meta name="description" content="Hanyang Wang builds learning algorithms, data engines, evaluation systems, and production reinforcement-learning systems for intelligent agents." />
     <meta property="og:title" content="Hanyang Wang 王汉扬" />
-    <meta property="og:description" content="Data-efficient learning systems for large language models and intelligent agents." />
+    <meta property="og:description" content="Learning algorithms, data engines, evaluation systems, and production RL for intelligent agents." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Hanyang Wang 王汉扬" />
-    <meta name="twitter:description" content="Data-efficient learning systems for large language models and intelligent agents." />
+    <meta name="twitter:description" content="Learning algorithms, data engines, evaluation systems, and production RL for intelligent agents." />
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://edwanglodasc.github.io/" />
     <link rel="stylesheet" href="styles.css" />
@@ -21,29 +21,161 @@
         <div>
           <h1 id="page-title">Hanyang Wang <span class="chinese-name" lang="zh-CN">王汉扬</span></h1>
           <p class="email">hanyangw [at] uchicago [dot] edu</p>
-          <p>I am an M.S. candidate in Data Science (Artificial Intelligence) at the University of Chicago. My research interests include data efficiency, LLM post-training, agentic reinforcement learning, agent harnesses, and LLM data synthesis.</p>
-          <p>I am currently working with the LongCat team at Meituan on foundation-model agentic coding. I study how language models can learn more effectively from trajectories, natural-language feedback, and interaction with complex environments.</p>
-          <p>Previously, I worked on foundation-model post-training at Microsoft AI, reinforcement learning for recommendation at Tencent, LLM application algorithms at ByteDance, and model evaluation at Xiaohongshu.</p>
+          <p class="intro-lead">I build learning algorithms, data engines, evaluation systems, and production reinforcement-learning systems for intelligent agents.</p>
+          <p>I am an M.S. candidate in Data Science (Artificial Intelligence) at the University of Chicago and currently work with Meituan's LongCat team on foundation-model agentic coding. My work focuses on data efficiency, post-training, long-horizon credit assignment, agent harnesses, and executable training data.</p>
+          <p>Previously, I built post-training methods at Microsoft AI, a production recommendation policy at Tencent, coding-model evaluation and preference-data systems at ByteDance, and foundation-model benchmarks at Xiaohongshu.</p>
           <nav class="profile-links" aria-label="Profile links">
             <a href="Hanyang_Wang_CV.pdf" target="_blank">CV</a><span>/</span>
             <a href="https://github.com/EdWangLoDaSc" target="_blank" rel="noreferrer">GitHub</a><span>/</span>
             <a href="https://scholar.google.com/scholar?q=%22Hanyang+Wang%22+Text2Grad" target="_blank" rel="noreferrer">Google Scholar</a><span>/</span>
             <a href="https://www.linkedin.com/in/hanyang-wang-950623252" target="_blank" rel="noreferrer">LinkedIn</a>
           </nav>
+          <nav class="section-links" aria-label="Page sections">
+            <a href="#builds">Selected builds</a>
+            <a href="#experience">Experience</a>
+            <a href="#publications">Publications</a>
+          </nav>
         </div>
         <div class="portrait-placeholder" aria-label="Portrait placeholder"><span>HW</span></div>
       </section>
 
-      <section aria-labelledby="experience-title">
-        <h2 id="experience-title">Experience</h2>
-        <article class="experience-item"><div class="item-heading"><h3>Meituan, LongCat</h3><span>Jun. 2026 — Present</span></div><p class="role">Foundation-Model Agentic Coding</p><p>I work on rollout-aware on-policy distillation, hierarchical agentic reinforcement learning, and executable data environments for coding and computer-use agents.</p><a class="detail-link" href="experience/meituan/">Read more <span aria-hidden="true">→</span></a></article>
-        <article class="experience-item"><div class="item-heading"><h3>Tencent, CDG Advertising</h3><span>Jun. 2025 — Sep. 2025</span></div><p class="role">RL for Recommendation</p><p>I built and deployed a reinforcement-learning system for personalized multi-objective ad ranking, validated through a large-scale online experiment.</p><a class="detail-link" href="experience/tencent/">Read more <span aria-hidden="true">→</span></a></article>
-        <article class="experience-item"><div class="item-heading"><h3>Microsoft AI</h3><span>Jan. 2025 — Jun. 2025</span></div><p class="role">Foundation-Model Post-Training</p><p>I proposed Text2Grad, a framework that converts natural-language feedback into span-level learning signals for more precise and data-efficient RLHF.</p><a class="detail-link" href="experience/microsoft/">Read more <span aria-hidden="true">→</span></a></article>
-        <article class="experience-item"><div class="item-heading"><h3>ByteDance, Doubao-Trae</h3><span>Sep. 2024 — Jan. 2025</span></div><p class="role">LLM Application Algorithms</p><p>I developed automated evaluation, reverse-distillation data pipelines, and step-level preference optimization for coding assistants.</p><a class="detail-link" href="experience/bytedance/">Read more <span aria-hidden="true">→</span></a></article>
-        <article class="experience-item"><div class="item-heading"><h3>Xiaohongshu, Hi-Lab</h3><span>Jul. 2024 — Sep. 2024</span></div><p class="role">Foundation-Model Evaluation</p><p>I contributed to OpenCompass and designed multimodal evaluation tasks for visual similarity, aesthetics, OCR, and structured extraction.</p><a class="detail-link" href="experience/xiaohongshu/">Read more <span aria-hidden="true">→</span></a></article>
+      <section id="builds" aria-labelledby="builds-title">
+        <h2 id="builds-title">Selected Builds</h2>
+        <p class="section-intro">A selection of systems and research projects I personally built or co-built. The descriptions below separate the artifact, the hard part, the measured outcome, and the technical takeaway.</p>
+
+        <div class="build-list">
+          <article class="build-item" id="divopd">
+            <header class="build-header">
+              <p class="build-index">01 / 08 · 2026 · Lead</p>
+              <h3>DivOPD</h3>
+              <p class="build-subtitle">A rollout-aware batch composer for on-policy distillation of multi-turn agents.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I built</h4><p>The learner-side validate-cover-focus pipeline: reject turns with no valid teacher signal, sample trajectories before turns to preserve rollout coverage, cap per-rollout contribution, then prioritize turns with high sampled forward KL.</p></div>
+              <div><h4>Hard part</h4><p>A nominal 64-turn batch often represented only 4–8 effective rollouts. One rollout could contribute 24–40% of all tokens, while up to 27.8% of turns had no valid supervision. The loss looked correct, but the update unit was badly composed.</p></div>
+              <div><h4>Result</h4><p>Without changing the model, loss, optimizer, or rollout procedure, mean peak success increased from 77.4% to 83.7% across six 1.5B–7B settings and three environments. Average time-to-target improved by 1.78×.</p></div>
+              <div><h4>Takeaway</h4><p>For long-horizon agent training, batch composition is part of the learning algorithm. Which trajectories share an update can matter as much as the objective applied to them.</p></div>
+            </div>
+            <div class="build-links"><a href="experience/meituan/">Work context</a><span>Paper under review</span></div>
+          </article>
+
+          <article class="build-item" id="bipace">
+            <header class="build-header">
+              <p class="build-index">02 / 08 · 2026 · First author</p>
+              <h3>BiPACE</h3>
+              <p class="build-subtitle">A critic-free advantage estimator for long-horizon LLM agents.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I built</h4><p>BiGPO groups behaviorally similar states using the actor's hidden-state geometry. PACE then estimates action-conditioned peer baselines inside each state group, producing local counterfactual credit without a learned critic or additional rollouts.</p></div>
+              <div><h4>Hard part</h4><p>Exact observation hashing created singleton groups with no learning signal, while a single group mean mixed state value with action quality. The estimator's comparison unit was wrong on both sides.</p></div>
+              <div><h4>Result</h4><p>On ALFWorld with Qwen2.5-7B, success increased from GiGPO's 90.8% to 97.1 ± 0.9%. At 1.5B scale, BiPACE reached 93.5 ± 1.2% versus 86.7%, and transferred to WebShop and TextCraft.</p></div>
+              <div><h4>Takeaway</h4><p>Useful credit comes from comparing actions taken in behaviorally equivalent states—not merely states with identical surface observations.</p></div>
+            </div>
+            <div class="build-links"><a href="https://arxiv.org/abs/2606.25556" target="_blank" rel="noreferrer">Paper</a><a href="https://github.com/TianxiangZhao/BiPACE" target="_blank" rel="noreferrer">Code</a></div>
+          </article>
+
+          <article class="build-item" id="longcat-data">
+            <header class="build-header">
+              <p class="build-index">03 / 08 · 2026 · Builder</p>
+              <h3>LongCat2.5 Agentic Data Engine</h3>
+              <p class="build-subtitle">Executable SWE-SQL and OfficeQA-Pro training environments on Harbor.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I built</h4><p>Task environments and an auditable pipeline covering multi-source document sampling, K3 question generation and solving, independent validation, programmatic answer recomputation, structured rubrics, and trajectory distillation.</p></div>
+              <div><h4>Hard part</h4><p>Generated office and SQL tasks can look plausible while containing ambiguous questions, unverifiable answers, or broken execution paths. Quality had to be established by independent solving and recomputation, not style alone.</p></div>
+              <div><h4>Result</h4><p>The pipeline produced 9,000 agentic tasks. Distilled K3 trajectories used to fine-tune Flash-26B-DSA improved OfficeQA-Pro Full from 46.6% to 60.2%, a gain of 13.5 percentage points.</p></div>
+              <div><h4>Takeaway</h4><p>For agent data, executability and auditability are product features. A smaller verifiable task set is more useful than a larger collection of plausible prompts.</p></div>
+            </div>
+            <div class="build-links"><a href="experience/meituan/">Work context</a></div>
+          </article>
+
+          <article class="build-item" id="text2grad">
+            <header class="build-header">
+              <p class="build-index">04 / 08 · 2025 · First author</p>
+              <h3>Text2Grad</h3>
+              <p class="build-subtitle">Reinforcement learning from natural-language feedback.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I built</h4><p>A semantic-alignment → reward-mapping → gradient-propagation loop that links phrases in a critique to the responsible token spans and converts that alignment into localized differentiable learning signals.</p></div>
+              <div><h4>Hard part</h4><p>Scalar rewards say whether an answer failed but not where or why. Free-form critiques contain that information, but they must be aligned to exact spans before they can update model parameters safely.</p></div>
+              <div><h4>Result</h4><p>Text2Grad outperformed PPO, DPO, and PRM-PPO across summarization, code generation, and open-domain QA: BLEU +25.3%, HumanEval+ +3.6, AlpacaEval +2.3, and 22% faster convergence.</p></div>
+              <div><h4>Takeaway</h4><p>Natural language can be more than an explanation layer. With explicit alignment, it becomes a precise optimization interface.</p></div>
+            </div>
+            <div class="build-links"><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/52fbb930ec6941099f1384321d8b9461-Abstract-Conference.html" target="_blank" rel="noreferrer">Paper</a><a href="https://github.com/microsoft/Text2Grad" target="_blank" rel="noreferrer">Code</a><a href="experience/microsoft/">Work context</a></div>
+          </article>
+
+          <article class="build-item" id="drl-put">
+            <header class="build-header">
+              <p class="build-index">05 / 08 · 2025 · End-to-end owner</p>
+              <h3>DRL-PUT</h3>
+              <p class="build-subtitle">A production RL policy for personalized multi-objective ad ranking.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I built</h4><p>The offline-training-to-online-serving stack: a personalized reward combining revenue and user value, a REINFORCE policy, continuous-action discretization, and grouped utility weights for real-time inference.</p></div>
+              <div><h4>Hard part</h4><p>The policy had to balance click, conversion, impression, and revenue objectives under sparse, high-variance rewards, user heterogeneity, seasonal drift, and production latency constraints at more than 100 million MAU.</p></div>
+              <div><h4>Result</h4><p>A 25% traffic A/B test at billion-impression scale delivered CTR +9.7%, CTR30 +7.7%, and CVR +1.26%, with no significant regression in core revenue metrics.</p></div>
+              <div><h4>Takeaway</h4><p>The best algorithm is the one that survives the reward distribution, action-space constraints, and serving path. Production design narrowed the research choice.</p></div>
+            </div>
+            <div class="build-links"><a href="experience/tencent/">Work context</a></div>
+          </article>
+
+          <article class="build-item" id="code-eval">
+            <header class="build-header">
+              <p class="build-index">06 / 08 · 2024 · Lead</p>
+              <h3>Code-IDE Evaluation & Data Engine</h3>
+              <p class="build-subtitle">Automated evaluation and traceable preference data for coding assistants.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I built</h4><p>A hybrid benchmark using chain-of-thought reasoning and self-reflection to score readability, style, and intent alignment, plus a reverse-distillation pipeline that mapped production failures to error types, repair paths, and training labels.</p></div>
+              <div><h4>Hard part</h4><p>Evaluation had to track human judgment while remaining fast enough to compare 8–10 candidate models. Training negatives also had to isolate a useful failure instead of bundling many unrelated errors.</p></div>
+              <div><h4>Result</h4><p>The evaluator reached 0.85+ Spearman correlation with human rankings and reduced turnaround from 2–3 days to hours. Step-level DPO and staged curriculum improved robustness on difficult boundary cases.</p></div>
+              <div><h4>Takeaway</h4><p>Evaluation and data design are one system: a useful evaluator should not only rank models, but also explain how failures become targeted training examples.</p></div>
+            </div>
+            <div class="build-links"><a href="experience/bytedance/">Work context</a></div>
+          </article>
+
+          <article class="build-item" id="skillrl">
+            <header class="build-header">
+              <p class="build-index">07 / 08 · 2026 · Equal contributor</p>
+              <h3>SkillRL</h3>
+              <p class="build-subtitle">A recursively evolving skill memory for LLM agents.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I co-built</h4><p>A system that distills successful and failed trajectories into a hierarchical SkillBank, retrieves general and task-specific skills during interaction, and updates the bank when validation failures reveal missing knowledge.</p></div>
+              <div><h4>Hard part</h4><p>Raw trajectory memory is long, redundant, and noisy. The system had to compress experience into reusable procedural knowledge without losing the task-specific details needed for action.</p></div>
+              <div><h4>Result</h4><p>Across ALFWorld, WebShop, and search-augmented QA, SkillRL improved over strong baselines by roughly 15.3% overall. On ALFWorld, success increased from GRPO's 77.6% to 89.9%.</p></div>
+              <div><h4>Takeaway</h4><p>Agent memory becomes more useful when it stores abstractions that can change—not transcripts that only grow.</p></div>
+            </div>
+            <div class="build-links"><a href="https://arxiv.org/abs/2602.08234" target="_blank" rel="noreferrer">Paper</a><a href="https://github.com/aiming-lab/SkillRL" target="_blank" rel="noreferrer">Code</a></div>
+          </article>
+
+          <article class="build-item" id="know2say">
+            <header class="build-header">
+              <p class="build-index">08 / 08 · 2026 · First author</p>
+              <h3>Know2Say / BAEE</h3>
+              <p class="build-subtitle">A black-box early-exit system for reasoning models.</p>
+            </header>
+            <div class="build-story">
+              <div><h4>I built</h4><p>A behavioral probing framework that detects when an answer is already recoverable from partial reasoning, and Black-box Adaptive Early Exit, which uses free continuations for both detection and answer extraction.</p></div>
+              <div><h4>Hard part</h4><p>Forced extraction often failed even when free continuations already recovered the correct answer. The stopping method had to avoid changing the model's continuation distribution at exactly the moment it tried to save computation.</p></div>
+              <div><h4>Result</h4><p>Across five model configurations and three benchmarks, BAEE reduced serial generation by 70–78% while improving accuracy by 1–5 percentage points; thinking-mode models gained as much as 5.8 points.</p></div>
+              <div><h4>Takeaway</h4><p>A model can have a recoverable answer before it can obey a prompt to state that answer. Early-exit systems must account for the distribution shift they introduce.</p></div>
+            </div>
+            <div class="build-links"><a href="https://arxiv.org/abs/2604.06613" target="_blank" rel="noreferrer">Paper</a><a href="https://github.com/EdWangLoDaSc/know2say" target="_blank" rel="noreferrer">Code</a></div>
+          </article>
+        </div>
       </section>
 
-      <section aria-labelledby="publications-title">
+      <section id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <article class="experience-item"><div class="item-heading"><h3>Meituan, LongCat</h3><span>Jun. 2026 — Present</span></div><p class="role">Foundation-Model Agentic Coding</p><p>I work on rollout-aware on-policy distillation, hierarchical agentic reinforcement learning, and executable data environments for coding and computer-use agents.</p><a class="detail-link" href="experience/meituan/">Read details</a></article>
+        <article class="experience-item"><div class="item-heading"><h3>Tencent, CDG Advertising</h3><span>Jun. 2025 — Sep. 2025</span></div><p class="role">RL for Recommendation</p><p>I built and deployed a reinforcement-learning system for personalized multi-objective ad ranking, validated through a large-scale online experiment.</p><a class="detail-link" href="experience/tencent/">Read details</a></article>
+        <article class="experience-item"><div class="item-heading"><h3>Microsoft AI</h3><span>Jan. 2025 — Jun. 2025</span></div><p class="role">Foundation-Model Post-Training</p><p>I proposed Text2Grad, a framework that converts natural-language feedback into span-level learning signals for more precise and data-efficient RLHF.</p><a class="detail-link" href="experience/microsoft/">Read details</a></article>
+        <article class="experience-item"><div class="item-heading"><h3>ByteDance, Doubao-Trae</h3><span>Sep. 2024 — Jan. 2025</span></div><p class="role">LLM Application Algorithms</p><p>I developed automated evaluation, reverse-distillation data pipelines, and step-level preference optimization for coding assistants.</p><a class="detail-link" href="experience/bytedance/">Read details</a></article>
+        <article class="experience-item"><div class="item-heading"><h3>Xiaohongshu, Hi-Lab</h3><span>Jul. 2024 — Sep. 2024</span></div><p class="role">Foundation-Model Evaluation</p><p>I contributed to OpenCompass and designed multimodal evaluation tasks for visual similarity, aesthetics, OCR, and structured extraction.</p><a class="detail-link" href="experience/xiaohongshu/">Read details</a></article>
+      </section>
+
+      <section id="publications" aria-labelledby="publications-title">
         <h2 id="publications-title">Publications</h2>
         <p class="note">* Equal contribution. † Corresponding author.</p>
         <ol class="publication-list">
